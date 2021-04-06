@@ -6,7 +6,7 @@ services:
     environment:
       - ABC=abc
     volumes:
-      - "/var/www/gem_server/data:/webapps/geminabox/data"
+      - "/var/www/gem_server/shared/data:/webapps/geminabox/data"
     ports:
       - 9292:9292
     networks:
