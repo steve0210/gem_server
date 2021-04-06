@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  gem_server:
+    image: spoonest/geminabox
+    environment:
+      - ABC=abc
+    volumes:
+      - "/var/www/gem_server/data:/webapps/geminabox/data"
+    ports:
+      - 9292:9292
+    networks:
+      - my-net
+
+networks:
+  my-net:
+    external: true
