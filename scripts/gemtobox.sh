@@ -23,11 +23,12 @@ gems=$(rvm $version do bundle | sed -e '/Using/!d' -e '/from/d' -e 's/Using \(.*
 cd $wdir
 
 echo "Creating upload: $out"
+echo '#!/bin/sh\n' > $out
 (for f in $gems; do
   if [ -f $cache/${f}.gem ]; then
     echo gem inabox $cache/${f}.gem -g $host
   else
     echo gem inabox $cache/${f}*.gem -g $host
   fi
-done) > $out
+done) >> $out
 chmod +x $out
