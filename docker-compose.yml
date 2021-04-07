@@ -3,8 +3,6 @@ version: "3.8"
 services:
   gem_server:
     image: spoonest/geminabox
-    environment:
-      - ABC=abc
     volumes:
       - "/var/www/gem_server/shared/data:/webapps/geminabox/data"
     ports:
